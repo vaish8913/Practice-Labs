@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenwood High School</title>
+<style>
+  :root {
+    --primary: #1b4332;
+    --secondary: #2d6a4f;
+    --accent: #f4a261;
+    --light: #f8f9fa;
+    --text: #212529;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; }
+
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 { font-size: 1.5rem; }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; }
+  nav a { color: white; text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--accent); }
+
+  .hero {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+  .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+  .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem; }
+  .btn {
+    background: var(--accent);
+    color: var(--text);
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn:hover { opacity: 0.9; }
+
+  section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+  section h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  .card h4 { color: var(--secondary); margin-bottom: 0.5rem; }
+
+  .about { background: var(--light); }
+  .about-content { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
+  .about-content div { flex: 1; min-width: 280px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 2.5rem 2rem;
+  }
+  .stats div h4 { font-size: 2rem; color: var(--accent); }
+
+  footer {
+    background: var(--text);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    header { flex-direction: column; gap: 0.8rem; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎓 Greenwood High School</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Empowering Young Minds Since 1985</h2>
+  <p>Greenwood High School is committed to nurturing curiosity, character, and excellence in every student.</p>
+  <a href="#contact" class="btn">Admissions Open</a>
+</section>
+
+<section id="about" class="about">
+  <h3>About Our School</h3>
+  <div class="about-content">
+    <div>
+      <p>Greenwood High School offers a well-rounded curriculum from Grade 1 through Grade 12, blending academic rigor with creativity, sports, and community service. Our experienced faculty and modern campus create an environment where every student can thrive.</p>
+    </div>
+    <div class="stats">
+      <div><h4>1200+</h4><p>Students</p></div>
+      <div><h4>75</h4><p>Faculty Members</p></div>
+      <div><h4>38</h4><p>Years of Excellence</p></div>
+      <div><h4>95%</h4><p>Board Exam Pass Rate</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="academics">
+  <h3>Academic Programs</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>Primary School</h4>
+      <p>Grades 1–5: Building strong foundations in literacy, numeracy, and curiosity-driven learning.</p>
+    </div>
+    <div class="card">
+      <h4>Middle School</h4>
+      <p>Grades 6–8: Encouraging critical thinking through science, humanities, and technology.</p>
+    </div>
+    <div class="card">
+      <h4>High School</h4>
+      <p>Grades 9–12: Preparing students for board exams and future careers with science, commerce, and arts streams.</p>
+    </div>
+  </div>
+</section>
+
+<section id="activities" style="background: var(--light);">
+  <h3>Beyond the Classroom</h3>
+  <div class="cards">
+    <div class="card"><h4>🏆 Sports</h4><p>Football, basketball, athletics, and annual sports day events.</p></div>
+    <div class="card"><h4>🎭 Arts & Culture</h4><p>Music, dance, drama, and an annual cultural fest.</p></div>
+    <div class="card"><h4>🔬 Clubs</h4><p>Science club, robotics, debate society, and eco club.</p></div>
+    <div class="card"><h4>🤝 Community</h4><p>Volunteering programs and social outreach initiatives.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h3>Contact Us</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>📍 Address</h4>
+      <p>123 Education Lane, Chennai, Tamil Nadu, India</p>
+    </div>
+    <div class="card">
+      <h4>📞 Phone</h4>
+      <p>+91 98765 43210</p>
+    </div>
+    <div class="card">
+      <h4>✉️ Email</h4>
+      <p>info@greenwoodhigh.edu</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Greenwood High School. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
