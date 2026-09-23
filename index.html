@@ -1,189 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greenwood High School by Wren and Martin</title>
-<style>
-  :root {
-    --primary: #1b4332;
-    --secondary: #2d6a4f;
-    --accent: #f4a261;
-    --light: #f8f9fa;
-    --text: #212529;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudBite - Cloud Kitchen</title>
 
-  header {
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 { font-size: 1.5rem; }
-  nav ul { list-style: none; display: flex; gap: 1.5rem; }
-  nav a { color: white; text-decoration: none; font-weight: 500; }
-  nav a:hover { color: var(--accent); }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  .hero {
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
-    color: white;
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-  .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-  .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem; }
-  .btn {
-    background: var(--accent);
-    color: var(--text);
-    padding: 0.8rem 1.8rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-  }
-  .btn:hover { opacity: 0.9; }
+    body {
+      background: #fffaf5;
+      color: #222;
+      line-height: 1.6;
+    }
 
-  section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
-  section h3 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
+    /* Navbar */
+    header {
+      background: #ff5a1f;
+      color: white;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-  .card {
-    background: var(--light);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    text-align: center;
-  }
-  .card h4 { color: var(--secondary); margin-bottom: 0.5rem; }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
 
-  .about { background: var(--light); }
-  .about-content { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
-  .about-content div { flex: 1; min-width: 280px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    text-align: center;
-    background: var(--primary);
-    color: white;
-    padding: 2.5rem 2rem;
-  }
-  .stats div h4 { font-size: 2rem; color: var(--accent); }
+    nav a:hover {
+      color: #ffe0cc;
+    }
 
-  footer {
-    background: var(--text);
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-  }
+    /* Hero */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #fff1e6, #ffd7bd);
+    }
 
-  @media (max-width: 600px) {
-    header { flex-direction: column; gap: 0.8rem; }
-    nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-  }
-</style>
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 55px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #ff5a1f;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff5a1f;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e6470d;
+    }
+
+    .hero-image {
+      font-size: 180px;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      color: #222;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    /* Menu */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .food-image {
+      height: 180px;
+      background: #ffe2d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .food-info {
+      padding: 20px;
+    }
+
+    .food-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .food-info p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .food-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      color: #ff5a1f;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .add-btn {
+      background: #ff5a1f;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Offer */
+    .offer {
+      background: #222;
+      color: white;
+      border-radius: 20px;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .offer h2 {
+      color: #ff8a5c;
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .offer p {
+      margin-bottom: 25px;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact {
+      background: #fff0e7;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 8px 0;
+      color: #555;
+    }
+
+    /* Cart */
+    .cart {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      background: #ff5a1f;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    #cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #222;
+      color: white;
+      font-size: 12px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-image {
+        font-size: 120px;
+        margin-top: 30px;
+      }
+
+      .offer {
+        padding: 35px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🎓 AdiAnv High School</h1>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#academics">Academics</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">🍴 CloudBite</div>
 
-<section class="hero">
-  <h2>Empowering Young Minds Since 1900 - Builders pillars</h2>
-  <p>Greenwood High School is committed to nurturing curiosity, character, and excellence in every student.</p>
-  <a href="#contact" class="btn">Get Enrolled Today</a>
-</section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="about" class="about">
-  <h3>About Our School</h3>
-  <div class="about-content">
-    <div>
-      <p>Greenwood High School offers a well-rounded curriculum from Grade 1 through Grade 12, blending academic rigor with creativity, sports, and community service. Our experienced faculty and modern campus create an environment where every student can thrive.</p>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1>Delicious Food,<br><span>Delivered Fast.</span></h1>
+
+      <p>
+        Freshly prepared meals from our kitchen to your doorstep.
+        Order your favorite food anytime, anywhere.
+      </p>
+
+      <a href="#menu" class="btn">Order Now</a>
     </div>
-    <div class="stats">
-      <div><h4>1200+</h4><p>Students</p></div>
-      <div><h4>75</h4><p>Faculty Members</p></div>
-      <div><h4>38</h4><p>Years of Excellence</p></div>
-      <div><h4>95%</h4><p>Board Exam Pass Rate</p></div>
+
+    <div class="hero-image">
+      🍔
     </div>
+
+  </section>
+
+
+  <!-- Menu -->
+  <section id="menu">
+
+    <div class="section-title">
+      <h2>Our Popular Menu</h2>
+      <p>Fresh, tasty and made with love.</p>
+    </div>
+
+    <div class="menu">
+
+      <div class="food-card">
+        <div class="food-image">🍔</div>
+
+        <div class="food-info">
+          <h3>Classic Burger</h3>
+          <p>Juicy grilled patty with fresh vegetables and cheese.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹149</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="food-card">
+        <div class="food-image">🍕</div>
+
+        <div class="food-info">
+          <h3>Cheese Pizza</h3>
+          <p>Loaded with mozzarella cheese and delicious toppings.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹249</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="food-card">
+        <div class="food-image">🍜</div>
+
+        <div class="food-info">
+          <h3>Spicy Noodles</h3>
+          <p>Hot and spicy noodles tossed with fresh vegetables.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹179</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="food-card">
+        <div class="food-image">🍗</div>
+
+        <div class="food-info">
+          <h3>Chicken Biryani</h3>
+          <p>Fragrant basmati rice cooked with tender chicken.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹229</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="food-card">
+        <div class="food-image">🌯</div>
+
+        <div class="food-info">
+          <h3>Chicken Wrap</h3>
+          <p>Grilled chicken wrapped with fresh vegetables and sauce.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹159</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="food-card">
+        <div class="food-image">🍰</div>
+
+        <div class="food-info">
+          <h3>Chocolate Cake</h3>
+          <p>Rich and creamy chocolate cake for the perfect dessert.</p>
+
+          <div class="food-bottom">
+            <span class="price">₹129</span>
+            <button class="add-btn" onclick="addToCart()">
+              Add +
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Offer -->
+  <section id="offers">
+
+    <div class="offer">
+      <h2>🔥 Special Offer</h2>
+
+      <p>
+        Get 20% OFF on your first order!
+      </p>
+
+      <p>
+        Use coupon code: <strong>FIRST20</strong>
+      </p>
+
+      <a href="#menu" class="btn">Explore Menu</a>
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+  <section>
+
+    <div class="section-title">
+      <h2>Why Choose CloudBite?</h2>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3>Fast Delivery</h3>
+        <p>Hot and fresh food delivered quickly.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🥗</div>
+        <h3>Fresh Ingredients</h3>
+        <p>We use quality ingredients in every meal.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👨‍🍳</div>
+        <h3>Expert Chefs</h3>
+        <p>Prepared by experienced chefs.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💳</div>
+        <h3>Easy Payment</h3>
+        <p>Simple and secure payment options.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you!</p>
+    </div>
+
+    <p>📞 +91 98765 43210</p>
+    <p>📧 hello@cloudbite.com</p>
+    <p>📍 Chennai, Tamil Nadu</p>
+
+  </section>
+
+
+  <!-- Cart -->
+  <div class="cart" onclick="showCart()">
+    🛒
+    <span id="cart-count">0</span>
   </div>
-</section>
 
-<section id="academics">
-  <h3>Academic Programs</h3>
-  <div class="cards">
-    <div class="card">
-      <h4>Primary School</h4>
-      <p>Grades 1–5: Building strong foundations in literacy, numeracy, and curiosity-driven learning.</p>
-    </div>
-    <div class="card">
-      <h4>Middle School</h4>
-      <p>Grades 6–8: Encouraging critical thinking through science, humanities, and technology.</p>
-    </div>
-    <div class="card">
-      <h4>High School</h4>
-      <p>Grades 9–12: Preparing students for board exams and future careers with science, commerce, and arts streams.</p>
-    </div>
-  </div>
-</section>
 
-<section id="activities" style="background: var(--light);">
-  <h3>Beyond the Classroom</h3>
-  <div class="cards">
-    <div class="card"><h4>🏆 Sports</h4><p>Football, basketball, athletics, and annual sports day events.</p></div>
-    <div class="card"><h4>🎭 Arts & Culture</h4><p>Music, dance, drama, and an annual cultural fest.</p></div>
-    <div class="card"><h4>🔬 Clubs</h4><p>Science club, robotics, debate society, and eco club.</p></div>
-    <div class="card"><h4>🤝 Community</h4><p>Volunteering programs and social outreach initiatives.</p></div>
-  </div>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 CloudBite. All Rights Reserved.</p>
+  </footer>
 
-<section id="contact">
-  <h3>Contact Us</h3>
-  <div class="cards">
-    <div class="card">
-      <h4>📍 Address</h4>
-      <p>123 Education Lane, Chennai, Tamil Nadu, India</p>
-    </div>
-    <div class="card">
-      <h4>📞 Phone</h4>
-      <p>+91 98765 43210</p>
-    </div>
-    <div class="card">
-      <h4>✉️ Email</h4>
-      <p>info@greenwoodhigh.edu</p>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <p>&copy; 2026 Greenwood High School. All rights reserved.</p>
-</footer>
+  <script>
+
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+
+      document.getElementById("cart-count").textContent = cartCount;
+
+      alert("Item added to cart!");
+    }
+
+    function showCart() {
+      if (cartCount === 0) {
+        alert("Your cart is empty.");
+      } else {
+        alert("You have " + cartCount + " item(s) in your cart.");
+      }
+    }
+
+  </script>
 
 </body>
 </html>
